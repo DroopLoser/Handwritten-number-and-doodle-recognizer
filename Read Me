@@ -1,0 +1,114 @@
+Handwritten Digit Recognition (Neural Network from Scratch)
+
+This project implements a simple neural network built from scratch using
+NumPy to recognize handwritten digits from the Kaggle Digit Recognizer
+dataset.
+
+Instead of using deep learning frameworks, this implementation manually
+builds the core components of a neural network including forward
+propagation, backpropagation, and gradient descent.
+
+------------------------------------------------------------------------
+
+PROJECT OVERVIEW
+
+The model classifies handwritten digits (0–9) from 28×28 grayscale
+images.
+
+Each image is flattened into a 784-dimensional input vector and passed
+through a small neural network.
+
+The network learns by iteratively adjusting weights to minimize
+prediction error.
+
+------------------------------------------------------------------------
+
+NEURAL NETWORK ARCHITECTURE
+
+Input Layer - 784 neurons (28×28 pixels flattened)
+
+Hidden Layer - 10 neurons - Activation function: ReLU
+
+Output Layer - 10 neurons (one for each digit 0–9) - Activation
+function: Softmax
+
+The output layer produces probabilities for each digit class.
+
+------------------------------------------------------------------------
+
+WORKFLOW
+
+1.  Load Dataset
+
+-   Import the Kaggle Digit Recognizer dataset.
+-   Convert the dataset into NumPy arrays.
+
+2.  Data Preparation
+
+-   Shuffle the dataset to avoid bias.
+-   Split data into:
+    -   Training set
+    -   Development (validation) set
+
+3.  Normalize Input Pixel values are scaled from: 0–255 → 0–1
+
+This helps stabilize neural network training.
+
+4.  Initialize Parameters Randomly initialize weights and biases.
+
+5.  Forward Propagation Compute predictions through the network: Input →
+    Hidden Layer → Output Layer
+
+Using: - ReLU activation for hidden layer - Softmax activation for
+output layer
+
+6.  One-Hot Encoding Convert labels into one-hot vectors for training.
+
+Example: Digit 3 → [0,0,0,1,0,0,0,0,0,0]
+
+7.  Backpropagation Calculate gradients to determine how much each
+    weight contributed to the prediction error.
+
+8.  Gradient Descent Update weights and biases using: W = W − α * dW
+
+Where α is the learning rate.
+
+9.  Model Evaluation Evaluate predictions using classification accuracy.
+
+10. Visualization Display sample predictions with the corresponding
+    digit image using Matplotlib.
+
+------------------------------------------------------------------------
+
+TECHNOLOGIES USED
+
+-   Python
+-   NumPy
+-   Pandas
+-   Matplotlib
+-   Kaggle Dataset
+
+------------------------------------------------------------------------
+
+DATASET
+
+Kaggle Digit Recognizer (MNIST format)
+
+Contains 28×28 grayscale images of handwritten digits (0–9).
+
+------------------------------------------------------------------------
+
+LEARNING OBJECTIVES
+
+This project demonstrates: - Neural networks from first principles -
+Matrix-based forward propagation - Backpropagation - Gradient descent
+optimization - Data preprocessing for machine learning
+
+------------------------------------------------------------------------
+
+FUTURE IMPROVEMENTS
+
+Possible improvements include: - Adding more hidden layers -
+Implementing mini-batch gradient descent - Using better weight
+initialization - Adding regularization - Implementing the network with
+PyTorch or TensorFlow
